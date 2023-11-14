@@ -1,3 +1,16 @@
+# INTRO
+Welcome to the repository of my chat application! This application has been developed using Angular for the frontend and a backend based on firebase to handle data persistence operations.
+
+# Key Features
+
+Real-Time Messaging: Communicate instantly with other users through a real-time chat.
+
+User Management: View the list of online users, check their status, and start a conversation with a simple click.
+
+User Profile: Update your profile with personal information and view profiles of other users.
+
+Intuitive Interface: An intuitive and responsive user interface makes navigation a pleasant experience.
+
 # ChatLearning0
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
