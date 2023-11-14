@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="content">
+        <h4 class="mb-3">Seleziona un utente</h4>
+        <mat-form-field appearance="fill">
+            <mat-label>Elenco utenti</mat-label>
+            <mat-select [formControl]="selectedUser">
+                <mat-option *ngFor="let user of users" [value]="user.id">
+                    {{user.firstName}} {{user.lastName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        
+        <div class="mt-1">
+            <button mat-raised-button color="primary" (click)="login()">Login</button>
+        </div>
+        <div class="mt-1">
+            <button  mat-raised-button color="accent" (click)="newUser()">Crea un nuovo utente</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(80vh - 64px);
+}
+
+.content {
+    max-width: 300px;
+}
+
+button {
+    width: 100%;
+}

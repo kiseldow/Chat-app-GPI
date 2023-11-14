@@ -1,0 +1,34 @@
+.online {
+    color: green;
+}
+
+.offline {
+    color: red;
+}
+
+
+.user-container {
+    display: flex;
+    justify-content: space-between;
+
+    // padding: 1rem tutte le direzioni
+    // padding: 1rem 1rem; top/bottom, right/left
+    // padding: 1rem 1rem 1rem 1rem; top right bottom left
+    border-bottom: 1px solid black;
+
+    .name-container {
+        cursor: pointer;
+        padding: .5rem 1rem;
+
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            background-color: #ff8533;
+        }
+    }
+}
+
+.icon {
+    cursor: pointer;
+}

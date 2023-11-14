@@ -1,0 +1,112 @@
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened class="sidenav"
+    ><img width="90%" [src]="photoUrl" alt="Immagine profilo" />
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- CARD -->
+    <mat-card class="m-3">
+      <mat-card-content>
+        <mat-card-title class="mb-3">PROFILO</mat-card-title>
+        <!-- <form *ngIf="userForm" [formGroup]="userForm"> -->
+        <form [formGroup]="userForm">
+          <!-- accordion 1 -->
+          <mat-accordion>
+            <mat-expansion-panel [expanded]="datiPersonaliOpenState" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>DATI PERSONALI</mat-panel-title>
+                <mat-panel-description>
+                  Pannello con i dati personali
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <mat-grid-list cols="4" rowHeight="100px">
+                <mat-grid-tile>
+                  <mat-form-field class="example-full-width" >
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="firstName" />
+                  </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <mat-form-field class="example-full-width" >
+                    <mat-label>Surname</mat-label>
+                    <input matInput formControlName="lastName" />
+                  </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <mat-form-field class="example-full-width" >
+                    <mat-label>Data</mat-label>
+                    <input
+                      matInput
+                      [matDatepicker]="birthDate"
+                      formControlName="birthDate"
+                    />
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle
+                      matSuffix
+                      [for]="birthDate"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #birthDate></mat-datepicker>
+                  </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <mat-form-field class="example-full-width" >
+                    <mat-label>Professione</mat-label>
+                    <input matInput formControlName="job" />
+                  </mat-form-field>
+                </mat-grid-tile>
+              </mat-grid-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel
+              (opened)="datiPersonaliOpenState = false"
+              (closed)="datiPersonaliOpenState = true"
+            >
+            </mat-expansion-panel>
+          </mat-accordion>
+
+          <!-- accordion 2 -->
+          <mat-accordion>
+            <mat-expansion-panel [expanded]="datiContattoOpenState" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>CONTATTI</mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <mat-grid-list cols="4" rowHeight="100px">
+                <mat-grid-tile>
+                  <mat-form-field class="example-full-width" >
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" />
+                  </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <mat-form-field class="example-full-width" >
+                    <mat-label>Contatto mobile</mat-label>
+                    <input matInput formControlName="telephoneNumber" />
+                  </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <mat-form-field class="example-full-width" >
+                    <mat-label>Contatto fisso</mat-label>
+
+                    <input matInput formControlName="mobileNumber" />
+                  </mat-form-field>
+                </mat-grid-tile>
+              </mat-grid-list>
+            </mat-expansion-panel>
+            <mat-expansion-panel
+              (opened)="datiContattoOpenState = true"
+              (closed)="datiContattoOpenState = false"
+            >
+            </mat-expansion-panel>
+          </mat-accordion>
+        </form>
+        <button class="mt-1" mat-raised-button color="primary" (click)="saveUser()">
+          {{userId ? 'Modifica' : 'Crea'}}
+        </button>
+        <button *ngIf="userId" class="mt-1 ms-3" mat-raised-button color="warn" (click)="deleteUser()">Elimina</button>
+        
+        <!-- <pre *ngIf="userForm.valid">{{userForm.value | json }}</pre> -->
+      </mat-card-content>
+    </mat-card>
+  </mat-sidenav-content>
+</mat-sidenav-container>

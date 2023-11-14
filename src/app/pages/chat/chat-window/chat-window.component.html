@@ -1,0 +1,8 @@
+<div class="msg-container d-flex flex-column">
+
+    <div *ngFor="let msg of messages" [ngClass]="msg.sender == sender ? 'sender':'receiver'">
+        {{msg.message}}
+    </div>
+    
+</div>
+<app-chat-input [sender]="sender" [receiver]="receiver"></app-chat-input>

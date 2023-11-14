@@ -1,0 +1,21 @@
+.msg-container {
+    height: calc(100vh - 64px - 80px);
+    padding: 2rem;
+}
+
+.receiver {
+    background-color: aquamarine;
+    border-radius: 25px;
+    padding: 1rem;
+    margin: 1rem 0;
+    width: 50%;
+}
+
+.sender {
+    background-color: lightgreen;
+    border-radius: 25px;
+    padding: 1rem;
+    margin: 1rem 0;
+    width: 50%;
+    align-self: flex-end;
+}

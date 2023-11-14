@@ -1,0 +1,25 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.menu-item {
+    margin-left: 1rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+        color: orange;
+    }
+
+    &:active {
+        text-decoration: underline;
+        text-decoration-color: orange;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}

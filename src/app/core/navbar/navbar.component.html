@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+    <span class="title">
+        <a *ngIf="!userId" routerLink="/">ChatGPI</a>
+        <a *ngIf="userId" routerLink="/chat">ChatGPI</a>
+    </span>
+    <span class="spacer"></span>
+    <span *ngIf="userId" class="menu-item">
+        <a routerLink="/chat">Chat</a>
+    </span>
+    <span class="menu-item">
+        <a *ngIf="!userId" routerLink="/profile">Crea profilo</a>
+        <a *ngIf="userId" [routerLink]="'/profile/' + userId">Il mio profilo</a>
+    </span>
+    <span *ngIf="userId" class="menu-item">
+        <a class="pointer" (click)="logout()">Logout</a>
+    </span>
+    <span *ngIf="isAdmin" class="menu-item">
+        <a class="pointer" (click)="setOffline()">SET OFFLINE</a>
+    </span>
+</mat-toolbar>
